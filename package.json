@@ -1,0 +1,15 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "latest",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "latest"
+  }
+}
