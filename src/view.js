@@ -27,9 +27,9 @@ class View extends EventEmitter {
         const editButton = listItem.querySelector('button.edit');
         const removeButton = listItem.querySelector('button.remove');
 
-        checkbox.addEventListeners('change', this.handleToggle.bind(this));
-        editButton.addEventListeners('click', this.handleEdit.bind(this));
-        removeButton.addEventListeners('click', this.handleRemove.bind(this));
+        checkbox.addEventListener('change', this.handleToggle.bind(this));
+        editButton.addEventListener('click', this.handleEdit.bind(this));
+        removeButton.addEventListener('click', this.handleRemove.bind(this));
 
         return listItem;
     }
@@ -82,7 +82,7 @@ class View extends EventEmitter {
     }
 
     addItem(todo) {
-        const listItem = this.createListItem(todo.title);
+        const listItem = this.createListItem(todo);
 
         this.input.value = '';
         this.list.appendChild(listItem);
