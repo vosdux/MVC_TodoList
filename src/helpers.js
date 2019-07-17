@@ -25,7 +25,7 @@ class EventEmitter {
         this.events = {};
     }
 
-    on(type, callback) {
+    subscribe(type, callback) {
         this.events[type] = this.events[type] || [];
         this.events[type].push(callback);
     }

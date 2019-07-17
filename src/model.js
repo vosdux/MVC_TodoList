@@ -16,7 +16,7 @@ class Model {
     updateItem(id, data) {
         const item = this.getItem(id);
 
-        Object.keys(data).forEach(prop => item[prop] = date[prop]);
+        Object.keys(data).forEach(prop => item[prop] = data[prop]);
 
         return item;
     }

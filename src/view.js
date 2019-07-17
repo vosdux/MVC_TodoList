@@ -113,7 +113,7 @@ class View extends EventEmitter {
     }
 
     removeItem(id) {
-        const listItem = this.findListItem(todo.id);
+        const listItem = this.findListItem(id);
 
         this.list.removeChild(listItem);
     }
