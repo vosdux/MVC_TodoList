@@ -7,6 +7,8 @@ class Controller {
         view.subscribe('toggle', this.toggleTodo.bind(this));
         view.subscribe('edit', this.editTodo.bind(this));
         view.subscribe('remove', this.removeTodo.bind(this));
+
+        view.show(model.state);
     }
 
     addTodo(title) {

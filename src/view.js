@@ -47,7 +47,7 @@ class View extends EventEmitter {
     handleToggle({ target }) {
         const listItem = target.parentNode;
         const id = listItem.getAttribute('data-id');
-        const completed = target.completed;
+        const completed = target.checked;
 
         this.emit('toggle', { id, completed })
     }
@@ -75,6 +75,14 @@ class View extends EventEmitter {
         const id = listItem.getAttribute('data-id');
 
         this.emit('remove', id);
+    }
+
+    show(todos) {
+        todos.forEach(todo => {
+            const listItem = this.createListItem(todo);
+
+            this.list.appendChild(listItem);
+        });
     }
 
     findListItem (id) {
