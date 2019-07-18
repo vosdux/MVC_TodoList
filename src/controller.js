@@ -15,7 +15,7 @@ class Controller {
         const todo = this.model.addItem({
             id: Date.now(),
             title,
-            complited: false
+            completed: false
         });
 
         this.view.addItem(todo);

@@ -17,7 +17,7 @@ class View extends EventEmitter {
         const editInput = createElement('input', { type: 'text', className: 'textfield' });
         const editButton = createElement('button', { className: 'edit' }, 'Изменить');
         const deleteButton = createElement('button', { className: 'remove' }, 'Удалить');
-        const item = createElement('li', { className: `todo-item${todo.completed ? 'completed' : ''}`, 'data-id' : todo.id }, checkbox, label, editInput, editButton, deleteButton);
+        const item = createElement('li', { className: `todo-item ${todo.completed ? 'completed' : ''}`, 'data-id' : todo.id }, checkbox, label, editInput, editButton, deleteButton);
 
         return this.addEventListeners(item);
     }
@@ -100,12 +100,12 @@ class View extends EventEmitter {
         const listItem = this.findListItem(todo.id);
         const checkbox = listItem.querySelector('.checkbox');
 
-        checkbox.checked = todo.complited;
+        checkbox.checked = todo.completed;
 
         if (todo.completed) {
             listItem.classList.add('completed');
         } else {
-            listItem.classList.remove('complited');
+            listItem.classList.remove('completed');
         }
     }
 

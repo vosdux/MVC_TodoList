@@ -19,8 +19,8 @@ class Model extends EventEmitter{
 
     updateItem(id, data) {
         const item = this.getItem(id);
-        this.emit('change', this.state);
         Object.keys(data).forEach(prop => item[prop] = data[prop]);
+        this.emit('change', this.state);
 
         return item;
     }
